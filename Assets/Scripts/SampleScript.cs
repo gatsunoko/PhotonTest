@@ -8,6 +8,8 @@ public class SampleScript : MonoBehaviourPunCallbacks
   private void Start() {
     // PhotonServerSettingsに設定した内容を使ってマスターサーバーへ接続する
     PhotonNetwork.ConnectUsingSettings();
+    PhotonNetwork.SendRate = 20; // 1秒間にメッセージ送信を行う回数
+    PhotonNetwork.SerializationRate = 10; // 1秒間にオブジェクト同期を行う回数
   }
 
   // マスターサーバーへの接続が成功した時に呼ばれるコールバック
